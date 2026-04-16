@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaliVault - All Tools | 160+ Kali Linux Security Tools</title>
+    <meta name="description" content="Browse 160+ Kali Linux security tools with detailed commands, examples, and usage information. Educational reference for ethical cybersecurity.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/icon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <svg class="kali-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="dragonGradTools" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#9f00ff"/>
+                            <stop offset="100%" style="stop-color:#00ff9f"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#dragonGradTools)" stroke-width="3"/>
+                    <g fill="url(#dragonGradTools)">
+                        <path d="M50 15 L65 35 L60 35 L70 50 L60 50 L75 70 L55 55 L50 70 L45 55 L25 70 L40 50 L30 50 L40 35 L35 35 Z"/>
+                        <circle cx="45" cy="38" r="3" fill="#0a0a0a"/>
+                        <circle cx="55" cy="38" r="3" fill="#0a0a0a"/>
+                    </g>
+                </svg>
+                <span class="logo-text">KaliVault</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html" class="active">Tools</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="action-btn" id="randomToolBtn" title="Random Tool">
+                    <svg viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
+                </button>
+                <button class="action-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>All Kali Linux Tools</h1>
+                <p class="page-subtitle">Explore our complete collection of 160+ security tools with detailed commands and examples</p>
+            </div>
+
+            <div class="quick-actions">
+                <button class="quick-action-btn" id="randomToolBtn2" title="Go to a random tool">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
+                    Random Tool
+                </button>
+                <button class="quick-action-btn" id="exportPdfBtn" title="Export tools to PDF">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    Export PDF
+                </button>
+                <button class="quick-action-btn" id="terminalSimBtn" title="Open command terminal simulator">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    Terminal
+                </button>
+                <button class="quick-action-btn" id="changelogBtn" title="View changelog">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Changelog
+                </button>
+                <button class="quick-action-btn" id="feedbackBtn" title="Send feedback">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    Feedback
+                </button>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span>Exploration Progress: <strong id="progressPercent">0%</strong></span>
+                    <span id="exploredCount">0 / 160 tools explored</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="filters-bar">
+                <div class="search-wrapper">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" id="searchInput" placeholder="Search tools by name, command, or category..." autocomplete="off">
+                </div>
+                <div class="filter-group" id="categoryFilters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="Information Gathering">Info</button>
+                    <button class="filter-btn" data-category="Vulnerability Analysis">Vuln</button>
+                    <button class="filter-btn" data-category="Web Application Analysis">Web</button>
+                    <button class="filter-btn" data-category="Password Attacks">Pass</button>
+                    <button class="filter-btn" data-category="Wireless Attacks">WiFi</button>
+                    <button class="filter-btn" data-category="Exploitation Tools">Exp</button>
+                    <button class="filter-btn" data-category="Forensics">For</button>
+                </div>
+                <div class="filter-group">
+                    <button class="filter-btn" data-difficulty="Easy">Easy</button>
+                    <button class="filter-btn" data-difficulty="Medium">Medium</button>
+                    <button class="filter-btn" data-difficulty="Hard">Hard</button>
+                </div>
+                <div class="filter-group">
+                    <button class="filter-btn filter-toggle" id="favoritesOnlyBtn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+                        Favorites
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-info">
+                <span class="results-count" id="resultsCount">Showing all 160 tools</span>
+            </div>
+
+            <div class="tools-table-wrapper">
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th>Tool Name</th>
+                            <th>Command</th>
+                            <th>Description</th>
+                            <th>Difficulty</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="toolsTableBody">
+                        <tr class="loading-row">
+                            <td colspan="5"><span class="loading">Loading tools...</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <svg viewBox="0 0 24 24"><path d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <h3>No tools found</h3>
+                <p>Try adjusting your search or filters</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="kali-logo-small" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="dragonGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#9f00ff"/>
+                                    <stop offset="100%" style="stop-color:#00ff9f"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="url(#dragonGradFoot)" stroke-width="3"/>
+                            <g fill="url(#dragonGradFoot)">
+                                <path d="M50 15 L65 35 L60 35 L70 50 L60 50 L75 70 L55 55 L50 70 L45 55 L25 70 L40 50 L30 50 L40 35 L35 35 Z"/>
+                                <circle cx="45" cy="38" r="3" fill="#0a0a0a"/>
+                                <circle cx="55" cy="38" r="3" fill="#0a0a0a"/>
+                            </g>
+                        </svg>
+                        <span class="footer-logo-text">KaliVault</span>
+                    </div>
+                    <p class="footer-description">This website is created purely for educational and ethical cybersecurity learning purposes. All tools and commands are for responsible, legal, and authorized use only.</p>
+                    <div class="social-links">
+                        <a href="mailto:ochiengv250@gmail.com" title="Email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+                        <a href="https://wa.me/254713079528" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                        <a href="https://instagram.com/404._victor" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://www.kali.org/docs/" target="_blank">Kali Docs</a></li>
+                        <li><a href="https://www.offensive-security.com/" target="_blank">Offensive Security</a></li>
+                        <li><a href="https://tools.kali.org/" target="_blank">Kali Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>KaliVault</h4>
+                    <ul>
+                        <li><a href="tools.html">Browse Tools</a></li>
+                        <li><a href="favorites.html">Favorites</a></li>
+                        <li><a href="#" id="openFeedback2">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:ochiengv250@gmail.com">ochiengv250@gmail.com</a></li>
+                        <li><a href="https://wa.me/254713079528" target="_blank">+254 713 079 528</a></li>
+                        <li><a href="https://instagram.com/404._victor" target="_blank">@404._victor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2024-2026 KaliVault <span class="version">v2.0</span>. Educational purposes only.</p>
+                <p class="disclaimer"><strong>Disclaimer:</strong> This website is created purely for educational and ethical cybersecurity learning purposes. All tools and commands are for responsible, legal, and authorized use only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span></span>
+    </div>
+
+    <div class="modal-overlay tool-modal" id="toolModal">
+        <div class="modal-content animate-modal">
+            <div class="modal-header">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="terminalModal">
+        <div class="modal-content terminal-window animate-modal">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="terminal-title">KaliVault Terminal</span>
+                <button class="terminal-close" id="terminalClose">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-output" id="terminalOutput">
+                    <p class="terminal-line">Welcome to KaliVault Terminal Simulator</p>
+                    <p class="terminal-line">Type <span class="highlight">help</span> for available commands</p>
+                </div>
+            </div>
+            <div class="terminal-input-wrapper">
+                <span class="terminal-prompt">root@kali:~#</span>
+                <input type="text" class="terminal-input" id="terminalInput" placeholder="Type a command..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="feedbackModal">
+        <div class="modal-content feedback-modal animate-modal">
+            <div class="modal-header">
+                <h2><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>Send Feedback</h2>
+                <button class="modal-close" id="feedbackClose">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="feedbackName">Your Name</label>
+                        <input type="text" id="feedbackName" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackEmail">Email Address</label>
+                        <input type="email" id="feedbackEmail" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackType">Category</label>
+                        <select id="feedbackType" required>
+                            <option value="">Select a category...</option>
+                            <option value="Bug Report">Bug Report</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="New Tool Request">New Tool Request</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackMessage">Message</label>
+                        <textarea id="feedbackMessage" rows="5" required placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        Send Feedback
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="changelogModal">
+        <div class="modal-content changelog-modal animate-modal">
+            <div class="modal-header">
+                <h2><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>Changelog</h2>
+                <button class="modal-close" id="changelogClose">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="changelog-content" id="changelogContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

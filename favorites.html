@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaliVault - My Favorites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/icon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <svg class="kali-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="dragonGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#9f00ff"/>
+                            <stop offset="100%" style="stop-color:#00ff9f"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#dragonGradFav)" stroke-width="3"/>
+                    <g fill="url(#dragonGradFav)">
+                        <path d="M50 15 L65 35 L60 35 L70 50 L60 50 L75 70 L55 55 L50 70 L45 55 L25 70 L40 50 L30 50 L40 35 L35 35 Z"/>
+                        <circle cx="45" cy="38" r="3" fill="#0a0a0a"/>
+                        <circle cx="55" cy="38" r="3" fill="#0a0a0a"/>
+                    </g>
+                </svg>
+                <span class="logo-text">KaliVault</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="favorites.html" class="active">Favorites</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="action-btn" id="randomToolBtn" title="Random Tool">
+                    <svg viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
+                </button>
+                <button class="action-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Favorites</h1>
+                <p class="page-subtitle">Your saved tools for quick access</p>
+            </div>
+
+            <div id="favoritesEmpty" class="favorites-empty" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+                <h2>No favorites yet</h2>
+                <p>Start exploring tools and click the heart icon to save them here</p>
+                <a href="tools.html" class="browse-tools-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg>
+                    Browse Tools
+                </a>
+            </div>
+
+            <div id="favoritesContent" style="display: none;">
+                <div class="favorites-stats">
+                    <span id="favoritesCount">0 tools saved</span>
+                    <button class="clear-favorites-btn" id="clearFavoritesBtn">Clear All</button>
+                </div>
+
+                <div class="favorites-grid" id="favoritesGrid"></div>
+            </div>
+
+            <div class="recently-viewed-section" id="recentlyViewedSection" style="display: none;">
+                <h2 class="section-title">Recently Viewed</h2>
+                <div class="recently-viewed-grid" id="recentlyViewedGrid"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="kali-logo-small" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="dragonGradFootFav" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#9f00ff"/>
+                                    <stop offset="100%" style="stop-color:#00ff9f"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="url(#dragonGradFootFav)" stroke-width="3"/>
+                            <g fill="url(#dragonGradFootFav)">
+                                <path d="M50 15 L65 35 L60 35 L70 50 L60 50 L75 70 L55 55 L50 70 L45 55 L25 70 L40 50 L30 50 L40 35 L35 35 Z"/>
+                                <circle cx="45" cy="38" r="3" fill="#0a0a0a"/>
+                                <circle cx="55" cy="38" r="3" fill="#0a0a0a"/>
+                            </g>
+                        </svg>
+                        <span class="footer-logo-text">KaliVault</span>
+                    </div>
+                    <p class="footer-description">This website is created purely for educational and ethical cybersecurity learning purposes.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://www.kali.org/docs/" target="_blank">Kali Docs</a></li>
+                        <li><a href="https://www.offensive-security.com/" target="_blank">Offensive Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>KaliVault</h4>
+                    <ul>
+                        <li><a href="tools.html">Browse Tools</a></li>
+                        <li><a href="favorites.html">Favorites</a></li>
+                        <li><a href="mailto:ochiengv250@gmail.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:ochiengv250@gmail.com">ochiengv250@gmail.com</a></li>
+                        <li><a href="https://wa.me/254713079528" target="_blank">+254 713 079 528</a></li>
+                        <li><a href="https://instagram.com/404._victor" target="_blank">@404._victor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2024-2026 KaliVault <span class="version">v2.0</span>. Educational purposes only.</p>
+                <p class="disclaimer"><strong>Disclaimer:</strong> This website is created purely for educational and ethical cybersecurity learning purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span></span>
+    </div>
+
+    <div class="modal-overlay tool-modal" id="toolModal">
+        <div class="modal-content animate-modal">
+            <div class="modal-header">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const favoritesGrid = document.getElementById('favoritesGrid');
+            const favoritesEmpty = document.getElementById('favoritesEmpty');
+            const favoritesContent = document.getElementById('favoritesContent');
+            const favoritesCount = document.getElementById('favoritesCount');
+            const recentlyViewedGrid = document.getElementById('recentlyViewedGrid');
+            const recentlyViewedSection = document.getElementById('recentlyViewedSection');
+            const clearFavoritesBtn = document.getElementById('clearFavoritesBtn');
+
+            let allTools = [];
+            let toolModal = document.getElementById('toolModal');
+            let modalBody = document.getElementById('modalBody');
+
+            async function loadTools() {
+                try {
+                    const response = await fetch('assets/data/tools-data.json');
+                    const data = await response.json();
+                    
+                    for (const [category, tools] of Object.entries(data.categories)) {
+                        tools.forEach(tool => {
+                            allTools.push({
+                                ...tool,
+                                category: category,
+                                id: tool.name.toLowerCase().replace(/[^a-z0-9]/g, '-')
+                            });
+                        });
+                    }
+                    renderFavorites();
+                    renderRecentlyViewed();
+                } catch (error) {
+                    console.error('Error loading tools:', error);
+                }
+            }
+
+            function getFavorites() {
+                return JSON.parse(localStorage.getItem('kalivault_favorites') || '[]');
+            }
+
+            function removeFromFavorites(toolId) {
+                const favorites = getFavorites().filter(id => id !== toolId);
+                localStorage.setItem('kalivault_favorites', JSON.stringify(favorites));
+                renderFavorites();
+                showToast('Removed from favorites');
+            }
+
+            function showToast(message) {
+                const toast = document.getElementById('toast');
+                if (toast) {
+                    toast.querySelector('span').textContent = message;
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 2500);
+                }
+            }
+
+            function renderFavorites() {
+                const favorites = getFavorites();
+                favoritesCount.textContent = `${favorites.length} tools saved`;
+
+                if (favorites.length === 0) {
+                    favoritesEmpty.style.display = 'block';
+                    favoritesContent.style.display = 'none';
+                    return;
+                }
+
+                favoritesEmpty.style.display = 'none';
+                favoritesContent.style.display = 'block';
+
+                const favoriteTools = allTools.filter(tool => favorites.includes(tool.id));
+
+                favoritesGrid.innerHTML = favoriteTools.map(tool => `
+                    <div class="favorite-tool-card" data-tool-id="${tool.id}">
+                        <button class="remove-favorite-btn" onclick="event.stopPropagation(); removeFromFavorites('${tool.id}')" title="Remove from favorites">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        </button>
+                        <div class="favorite-tool-header">
+                            <h3>${tool.name}</h3>
+                            <span class="difficulty-badge ${tool.difficulty.toLowerCase()}">${tool.difficulty}</span>
+                        </div>
+                        <p class="favorite-tool-category">${tool.category}</p>
+                        <p class="favorite-tool-desc">${tool.short_desc || ''}</p>
+                        <div class="tool-command">
+                            <code>${tool.command}</code>
+                            <button class="copy-btn" onclick="event.stopPropagation(); copyCommand('${tool.command}')">
+                                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.querySelectorAll('.favorite-tool-card').forEach(card => {
+                    card.addEventListener('click', function() {
+                        const toolId = this.dataset.toolId;
+                        const tool = allTools.find(t => t.id === toolId);
+                        if (tool) openToolModal(tool);
+                    });
+                });
+            }
+
+            function copyCommand(command) {
+                navigator.clipboard.writeText(command).then(() => {
+                    showToast('Copied to clipboard!');
+                });
+            }
+
+            function openToolModal(tool) {
+                const isFav = getFavorites().includes(tool.id);
+                
+                modalBody.innerHTML = `
+                    <div class="modal-tool-header">
+                        <div>
+                            <h2 class="modal-title">${tool.name}</h2>
+                            <p class="modal-category">${tool.category}</p>
+                        </div>
+                    </div>
+                    <p class="modal-description">${tool.full_description || tool.short_desc || ''}</p>
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">
+                            <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z"/></svg>
+                            Command
+                        </h3>
+                        <div class="modal-command">
+                            <code>${tool.command}</code>
+                            <button class="copy-btn" onclick="copyCommand('${tool.command.replace(/'/g, "\\'")}')">
+                                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    ${tool.example ? `
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">
+                            <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+                            Example
+                        </h3>
+                        <div class="example-block">
+                            <code class="example-command">${tool.example}</code>
+                        </div>
+                    </div>
+                    ` : ''}
+                    <div class="modal-meta">
+                        <span class="difficulty-badge ${tool.difficulty.toLowerCase()}">${tool.difficulty}</span>
+                    </div>
+                `;
+
+                toolModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            document.getElementById('modalClose').addEventListener('click', () => {
+                toolModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            toolModal.addEventListener('click', (e) => {
+                if (e.target === toolModal) {
+                    toolModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            window.removeFromFavorites = removeFromFavorites;
+            window.copyCommand = copyCommand;
+
+            clearFavoritesBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to remove all favorites?')) {
+                    localStorage.setItem('kalivault_favorites', '[]');
+                    renderFavorites();
+                    showToast('All favorites cleared');
+                }
+            });
+
+            loadTools();
+        });
+    </script>
+</body>
+</html>
