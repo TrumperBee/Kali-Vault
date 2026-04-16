@@ -273,7 +273,7 @@ body.light-theme .theme-toggle .icon-moon { display: none; }
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%239f00ff;stop-opacity:0.08"/><stop offset="100%" style="stop-color:%2300ff9f;stop-opacity:0.08"/></linearGradient></defs><circle cx="100" cy="100" r="90" fill="none" stroke="url(%23g)" stroke-width="4"/><path fill="url(%23g)" d="M100 30 L130 60 L120 60 L140 90 L120 90 L150 130 L110 100 L100 130 L90 100 L50 130 L80 90 L60 90 L80 60 L70 60 Z"/><circle cx="90" cy="65" r="6" fill="%239f00ff" opacity="0.5"/><circle cx="110" cy="65" r="6" fill="%239f00ff" opacity="0.5"/></svg>') center/contain no-repeat;
+  background: url('../images/background.jpg') center/cover no-repeat;
   opacity: 0.3;
   pointer-events: none;
   animation: float 20s ease-in-out infinite;
