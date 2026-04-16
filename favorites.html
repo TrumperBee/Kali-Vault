@@ -191,7 +191,7 @@
                         });
                     }
                     renderFavorites();
-                    renderRecentlyViewed();
+                    if (typeof renderRecentlyViewed === 'function') renderRecentlyViewed();
                 } catch (error) {
                     console.error('Error loading tools:', error);
                 }
