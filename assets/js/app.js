@@ -1,7 +1,7 @@
 /**
  * KaliVault - Advanced Features Module v2.0
  * ==========================================
- * Complete Kali Linux Tools Reference with 160+ tools
+ * Complete Kali Linux Tools Reference with 21 tools
  */
 
 const STORAGE_KEYS = {
@@ -591,7 +591,7 @@ class KaliVaultApp {
             <span class="version-date">April 2026</span>
           </div>
           <ul class="changelog-list">
-            <li class="added">Expanded to 160+ tools across 13 categories</li>
+            <li class="added">Expanded to 21 tools across 8 categories</li>
             <li class="added">Added official Kali dragon branding</li>
             <li class="added">New hero section with animated watermark</li>
             <li class="added">Added contact section with social links</li>
