@@ -5,8 +5,8 @@ A comprehensive, production-ready educational website serving as the ultimate Ka
 ## Features
 
 ### Core Features
-- **110+ Kali Linux Tools** - Complete database of security tools organized by category
-- **13 Categories** - Information Gathering, Vulnerability Analysis, Web Application Analysis, and more
+- **21 Kali Linux Tools** - Complete database of security tools organized by category
+- **8 Categories** - Information Gathering, Vulnerability Analysis, Web Application Analysis, Password Attacks, Wireless Attacks, Exploitation Tools, Forensics, and Reporting Tools
 - **Live Search** - Instant search across all tools and commands
 - **Advanced Filtering** - Filter by category, difficulty level, and favorites
 - **Detailed Tool Modals** - Comprehensive information including commands, flags, and examples
